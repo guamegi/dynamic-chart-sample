@@ -14,5 +14,5 @@
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
   },
-  "homepage": "https://guamegi.github.io/"
+  "homepage": "https://guamegi.github.io/dynamic-chart-sample"
 }
