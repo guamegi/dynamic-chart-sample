@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <script type="application/javascript" src="./js/scripts.js"></script>
+  </head>
+  <body>
+    <div>
+      <div id="top_controller">
+        <button class="start_button" onclick="javascript:mychart.draw_call();">
+          draw chart
+        </button>
+        <button class="stop_button" onclick="javascript:mychart.draw_stop();">
+          stop
+        </button>
+        <button class="tool_button" onclick="javascript:mychart.move_x_end();">
+          Show end
+        </button>
+        <button class="tool_button" onclick="cursor_onoff();">
+          cursor line on/off
+        </button>
+        <button class="tool_button" onclick="data_fill_onoff();">
+          data fill on/off
+        </button>
+      </div>
+      <canvas id="canvas"></canvas>
+      <div id="bottom_controller">
+        <button class="stop_button" onclick="">CALL</button>
+        <button class="start_button" onclick="">PUT</button>
+      </div>
+    </div>
+  </body>
+</html>
