@@ -4,7 +4,7 @@ window.onload = function () {
 ///////////////////////////////////////////////////////////////////
 // 테스트용 데이터 샘플링 - 시작
 
-var item_name = "TEST Sampling";
+var item_name = "MH Dynamic Chart";
 var dt = new Date();
 var sample_value = 10680; // 샘플데이터 시작 값
 var sample_timestamp = dt.getTime() - (dt.getTime() % 1000);
@@ -81,12 +81,6 @@ var sample_interval = setInterval(make_sample, 1000);
 ///////////////////////////////////////////////////////////////////
 // 테스트용 차트
 var mychart = null;
-var language;
-if (window.navigator.languages) {
-  language = window.navigator.languages[0];
-} else {
-  language = window.navigator.userLanguage || window.navigator.language;
-}
 
 function test_chart_init() {
   mychart = new SWCHART("canvas");
@@ -131,7 +125,7 @@ function SWCHART(holderId) {
     fillColor: "#FFFFFF",
     lineWidth: 1,
     alpha: 0.3,
-    font: "50pt Verdana",
+    font: "40pt Verdana",
     textAlign: "center",
     textBaseline: "middle",
   };
@@ -622,7 +616,7 @@ SWCHART.prototype.draw = function (sw) {
   // 배경 - 시작
   ctx.save();
   sw.set_pen("background");
-  ctx.drawImage(sw.bg, margin.left, margin.top, sw.d_w, sw.d_h);
+  // ctx.drawImage(sw.bg, margin.left, margin.top, sw.d_w, sw.d_h);
 
   ctx.beginPath();
   // 아이템 종목
@@ -631,7 +625,7 @@ SWCHART.prototype.draw = function (sw) {
 
   // 서버에서 받은 최종 시세 시간
   ctx.fillText(
-    sw_timeToText(dataInfo.current) + "(" + language + ")",
+    sw_timeToText(dataInfo.current),
     sw.adjustPixel_x(sw, sw.d_w / 2),
     sw.adjustPixel_y(sw, sw.d_h / 2)
   );
